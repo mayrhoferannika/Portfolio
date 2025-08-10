@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Annika — Portfolio</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+<style>
+:root{
+  --accent: #546354;
+  --accent-2: #6a7a6a;
+  --bg: #f8f9f8;
+  --card: #ffffff;
+  --muted: #6e776e;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background: var(--bg);
+  color:#333;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+}
+.wrap{
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 24px;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns: 300px 1fr;
+  gap: 28px;
+  align-items:center;
+  margin-bottom: 34px;
+}
+@media (max-width:900px){
+  .hero{grid-template-columns: 1fr; text-align:center}
+}
+.portrait {
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  overflow:hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  margin:auto;
+}
+.portrait img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.name{
+  color:var(--accent);
+  font-weight:700;
+  font-size:42px;
+  margin:0 0 6px 0;
+}
+.subtitle{
+  color:var(--muted);
+  margin:0 0 16px 0;
+  font-weight:500;
+}
+.lead{
+  color:#444;
+  margin:0 0 20px 0;
+  max-width:680px;
+  font-size:16px;
+}
+.cta {
+  display:inline-grid;
+  grid-auto-flow:column;
+  gap:12px;
+}
+.btn {
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  box-shadow: 0 3px 8px rgba(84,99,84,0.3);
+}
+.btn.secondary{
+  background:#fff;
+  border:1px solid var(--accent);
+  color:var(--accent);
+}
+
+/* Sections */
+section.card {
+  background: var(--card);
+  border-radius:14px;
+  padding:22px;
+  margin-bottom:22px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+.two-col{display:grid; grid-template-columns: 1fr 420px; gap:20px;}
+@media (max-width:1000px){ .two-col{grid-template-columns: 1fr} }
+.about-text { color:#444; }
+.skills-board{
+  background: #f4f4f4;
+  border-radius:12px;
+  padding:16px;
+}
+.skill-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+.skill{
+  display:flex; align-items:center; gap:12px;
+  padding:8px; border-radius:10px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.05);
+}
+.skill .icon{
+  width:36px; height:36px; border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  background: rgba(84,99,84,0.12); color:var(--accent);
+}
+.skill .meta{ font-weight:600; font-size:14px; }
+
+/* Contact */
+#contact.card { background-color: #f4f4f4; }
+#contact h3 { color: var(--accent); }
+#contact p { color: #444; }
+.contact{
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+@media (max-width:760px){ .contact{ flex-direction:column; text-align:center } }
+.contact-icons{ display:flex; gap:18px; align-items:center; }
+.icon-btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:10px 14px; border-radius:10px;
+  background: #fff; color:var(--accent);
+  border:1px solid rgba(84,99,84,0.2);
+}
+.icon-btn:hover{ box-shadow: 0 4px 12px rgba(0,0,0,0.1) }
+
+footer { text-align:center; color:var(--muted); margin-top:18px; font-size:13px }
+.small { font-size:13px; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="portrait">
+    <img src="profilbild.jpg" alt="Annika Mayrhofer">
+  </div>
+  <div>
+    <div class="name">Annika</div>
+    <div class="subtitle">Industrial Clerk • Open to new skills & student positions</div>
+    <p class="lead">
+      Hi — I'm Annika, a trained Industrial Clerk who brings engagement, versatility and practical knowledge to diverse work environments.
+      I am eager to develop new skills and contribute positively with dedication and a broad understanding of administrative and operational tasks.
+    </p>
+    <div class="cta">
+      <a class="btn" href="#about">Explore my profile</a>
+      <a class="btn secondary" href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="card">
+  <div class="two-col">
+    <div>
+      <h3 style="color:var(--accent)">About</h3>
+      <p class="about-text">
+        I completed vocational training as an Industrial Clerk at ETERNA Mode GmbH and have practical experience in retail, laboratory administration and seasonal sports instruction.
+        I value efficient teamwork, dependable execution and continuous learning.
+      </p>
+    </div>
+    <aside class="skills-board">
+      <h4 style="color:var(--accent)">Technical & Software Skills</h4>
+      <div class="skill-grid" style="margin-top:12px">
+        <div class="skill"><div class="icon"><i class="fa-solid fa-computer"></i></div><div class="meta">SAP</div></div>
+        <div class="skill"><div class="icon"><i class="fa-solid fa-file-lines"></i></div><div class="meta">MS Office</div></div>
+        <div class="skill"><div class="icon"><i class="fa-brands fa-salesforce"></i></div><div class="meta">Salesforce</div></div>
+        <div class="skill"><div class="icon"><i class="fa-solid fa-pen-nib"></i></div><div class="meta">Adobe InDesign (basic)</div></div>
+        <div class="skill"><div class="icon"><i class="fa-solid fa-image"></i></div><div class="meta">Photoshop (basic)</div></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="contact" class="card">
+  <div class="contact">
+    <div>
+      <h3>Contact</h3>
+      <p class="small">Feel free to reach out for student jobs or collaborations.</p>
+    </div>
+    <div class="contact-icons">
+      <a class="icon-btn" href="https://www.linkedin.com/in/annika-mayrhofer-2aa625337" target="_blank">
+        <i class="fa-brands fa-linkedin"></i><span class="small">LinkedIn</span>
+      </a>
+      <a class="icon-btn" href="tel:+43676821234411">
+        <i class="fa-solid fa-phone"></i><span class="small">+43 676 821234411</span>
+      </a>
+      <a class="icon-btn" href="mailto:mayrhoferannika@gmail.com">
+        <i class="fa-solid fa-envelope"></i><span class="small">mayrhoferannika@gmail.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Annika Mayrhofer — CV & Student Portfolio
+</footer>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true });</script>
+</body>
+</html>
