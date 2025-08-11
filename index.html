@@ -157,18 +157,17 @@ section.card {
 .timeline-item .meta{ color:var(--muted); font-weight:600; margin-bottom:8px; }
 .timeline-item .title{ color:#333; font-weight:700; margin-bottom:6px; }
 
-/* Experience cards */
-.experience-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
-@media (max-width:900px){ .experience-grid{ grid-template-columns: 1fr } }
-.exp-card{
-  padding:14px;
-  border-radius:12px;
-  background: #fff;
-  border:1px solid rgba(0,0,0,0.05);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.exp-card:hover{ transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
-.exp-card .title { color:#333; }
+ /* Experience cards */
+    .experience-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+    @media (max-width:900px){ .experience-grid{ grid-template-columns: 1fr } }
+    .exp-card{
+      padding:14px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+      border:1px solid rgba(255,255,255,0.02);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .exp-card:hover{ transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.6); }
 
 /* Languages & Tools */
 .skill-bar{ margin-bottom:12px; }
@@ -267,27 +266,37 @@ footer { text-align:center; color:var(--muted); margin-top:18px; font-size:13px 
   </div>
 </section>
 
-<section class="card" data-aos="fade-up">
-  <h3 style="color:var(--accent)">Professional Experience</h3>
-  <div class="experience-grid" style="margin-top:18px">
-    <div class="exp-card" data-aos="fade-up">
-      <div class="meta small">2020 – 2021</div>
-      <div class="title">Assistant — ETERNA Mode GmbH</div>
-    </div>
-    <div class="exp-card" data-aos="fade-up" data-aos-delay="60">
-      <div class="meta small">Aug 2021</div>
-      <div class="title">Intern — denk-outdoor.de</div>
-    </div>
-    <div class="exp-card" data-aos="fade-up" data-aos-delay="120">
-      <div class="meta small">Apr 2022 – Jun 2022</div>
-      <div class="title">Assistant — MVZ Laboratory, Passau</div>
-    </div>
-    <div class="exp-card" data-aos="fade-up" data-aos-delay="180">
-      <div class="meta small">Jan 2025 – Mar 2025</div>
-      <div class="title">Ski Instructor — SSS Asitz, Leogang</div>
-    </div>
-  </div>
-</section>
+   <!-- EXPERIENCE -->
+    <section class="card" data-aos="fade-up">
+      <div style="width:100%">
+        <h3 style="color:var(--accent)">Professional Experience</h3>
+        <div class="experience-grid" style="margin-top:18px">
+          <div class="exp-card" data-aos="fade-up">
+            <div class="meta small">2020 – 2021</div>
+            <div class="title">Assistant — ETERNA Mode GmbH</div>
+            <p class="small muted">Worked as a temporary assistant supporting store and operational tasks; gained insight into corporate processes and customer interactions.</p>
+          </div>
+
+          <div class="exp-card" data-aos="fade-up" data-aos-delay="60">
+            <div class="meta small">Aug 2021</div>
+            <div class="title">Intern — denk-outdoor.de</div>
+            <p class="small muted">Hands-on retail internship: customer service, merchandise presentation and daily shop operations.</p>
+          </div>
+
+          <div class="exp-card" data-aos="fade-up" data-aos-delay="120">
+            <div class="meta small">Apr 2022 – Jun 2022</div>
+            <div class="title">Assistant — MVZ Laboratory, Passau</div>
+            <p class="small muted">Administrative support in laboratory operations, including data entry and management of test records.</p>
+          </div>
+
+          <div class="exp-card" data-aos="fade-up" data-aos-delay="180">
+            <div class="meta small">Jan 2025 – Mar 2025</div>
+            <div class="title">Ski Instructor — SSS Asitz, Leogang</div>
+            <p class="small muted">Taught and supervised skiing lessons for children and adults; responsibility for safety and skill progression.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
 <section class="card" data-aos="fade-up">
   <div class="two-col">
@@ -297,14 +306,6 @@ footer { text-align:center; color:var(--muted); margin-top:18px; font-size:13px 
       <div class="skill-bar"><div class="small">English — C1</div><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div></div>
       <div class="skill-bar"><div class="small">Spanish — A2</div><div class="bar-track"><div class="bar-fill" style="width:36%"></div></div></div>
       <h4 style="color:var(--accent); margin-top:18px">Software & Tools</h4>
-      <div class="tools-grid">
-        <div class="tool-box"><i class="fa-solid fa-desktop" style="color:var(--accent)"></i> SAP</div>
-        <div class="tool-box"><i class="fa-solid fa-file-lines" style="color:var(--accent)"></i> MS Office</div>
-        <div class="tool-box"><i class="fa-brands fa-salesforce" style="color:var(--accent)"></i> Salesforce</div>
-        <div class="tool-box"><i class="fa-solid fa-pen-nib" style="color:var(--accent)"></i> InDesign (basic)</div>
-        <div class="tool-box"><i class="fa-solid fa-image" style="color:var(--accent)"></i> Photoshop (basic)</div>
-        <div class="tool-box"><i class="fa-solid fa-database" style="color:var(--accent)"></i> Data entry & admin</div>
-      </div>
     </div>
     <aside class="skills-board" data-aos="fade-left">
       <h4 style="color:var(--accent)">What I bring</h4>
