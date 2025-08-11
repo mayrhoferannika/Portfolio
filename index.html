@@ -16,7 +16,7 @@
   --accent-2: #6a7a6a;
   --bg: #f8f9f8;
   --card: #ffffff;
-  --muted: #6e776e;
+  --muted: #555; 
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -129,70 +129,55 @@ section.card {
   display:flex;align-items:center;justify-content:center;
   background: rgba(84,99,84,0.12); color:var(--accent);
 }
-.skill .meta{ font-weight:600; font-size:14px; }
+.skill .meta{ font-weight:600; font-size:14px; color:#333; }
 
-    /* About & Skills board */
-    .about-text { color:#e7efe7; }
-    .skills-board{
-      background: linear-gradient(180deg, rgba(84,99,84,0.07), rgba(0,0,0,0.18));
-      border-radius:12px;
-      padding:16px;
-      min-height:180px;
-    }
-    .skill-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
-    .skill{
-      display:flex; align-items:center; gap:12px; padding:8px; border-radius:10px;
-      background:rgba(255,255,255,0.015);
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    .skill .icon{ width:36px; height:36px; border-radius:8px; display:flex;align-items:center;justify-content:center; background: rgba(84,99,84,0.12); color:var(--accent); font-size:16px; }
-    .skill .meta{ color:#dbe7db; font-weight:600; font-size:14px; }
+/* Timeline styling */
+.timeline {
+  position:relative;
+  padding-left:24px;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:8px;
+  top:6px;
+  bottom:6px;
+  width:2px;
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  border-radius:2px;
+}
+.timeline-item{
+  position:relative;
+  margin:14px 0 28px 18px;
+  padding:14px;
+  border-radius:10px;
+  background: #fff;
+  border:1px solid rgba(0,0,0,0.05);
+}
+.timeline-item .meta{ color:var(--muted); font-weight:600; margin-bottom:8px; }
+.timeline-item .title{ color:#333; font-weight:700; margin-bottom:6px; }
 
-    /* Timeline styling */
-    .timeline {
-      position:relative;
-      padding-left:24px;
-    }
-    .timeline::before{
-      content:"";
-      position:absolute;
-      left:8px;
-      top:6px;
-      bottom:6px;
-      width:2px;
-      background:linear-gradient(180deg,var(--accent),var(--accent-2));
-      border-radius:2px;
-    }
-    .timeline-item{
-      position:relative;
-      margin:14px 0 28px 18px;
-      padding:14px;
-      border-radius:10px;
-      background: rgba(255,255,255,0.015);
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    .timeline-item .meta{ color:var(--muted); font-weight:600; margin-bottom:8px; }
-    .timeline-item .title{ color:#e7efe7; font-weight:700; margin-bottom:6px; }
+/* Experience cards */
+.experience-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+@media (max-width:900px){ .experience-grid{ grid-template-columns: 1fr } }
+.exp-card{
+  padding:14px;
+  border-radius:12px;
+  background: #fff;
+  border:1px solid rgba(0,0,0,0.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.exp-card:hover{ transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+.exp-card .title { color:#333; }
 
-    /* Experience cards */
-    .experience-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
-    @media (max-width:900px){ .experience-grid{ grid-template-columns: 1fr } }
-    .exp-card{
-      padding:14px;
-      border-radius:12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
-      border:1px solid rgba(255,255,255,0.02);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .exp-card:hover{ transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.6); }
+/* Languages & Tools */
+.skill-bar{ margin-bottom:12px; }
+.bar-track{ background: rgba(0,0,0,0.05); height:10px; border-radius:8px; overflow:hidden; }
+.bar-fill{ height:100%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); width:60%; }
 
-    /* Languages & Tools */
-    .skill-bar{ margin-bottom:12px; }
-    .bar-track{ background: rgba(255,255,255,0.03); height:10px; border-radius:8px; overflow:hidden; }
-    .bar-fill{ height:100%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); width:60%; }
+.tools-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:12px; }
+.tool-box{ padding:10px; border-radius:10px; background:#fff; text-align:center; color:#333; font-weight:600; }
 
-    .tools-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:12px; }
-    .tool-box{ padding:10px; border-radius:10px; background:rgba(255,255,255,0.015); text-align:center; color:#dfe9df; font-weight:600; }
 /* Contact */
 #contact.card { background-color: #f4f4f4; }
 #contact h3 { color: var(--accent); }
@@ -217,7 +202,7 @@ footer { text-align:center; color:var(--muted); margin-top:18px; font-size:13px 
 <body>
 <div class="wrap">
 
-<header class="hero">
+<header class="hero" data-aos="fade-up">
   <div class="portrait">
     <img src="profilbild.jpg" alt="Annika Mayrhofer">
   </div>
@@ -235,7 +220,7 @@ footer { text-align:center; color:var(--muted); margin-top:18px; font-size:13px 
   </div>
 </header>
 
-<section id="about" class="card">
+<section id="about" class="card" data-aos="fade-up">
   <div class="two-col">
     <div>
       <h3 style="color:var(--accent)">About</h3>
@@ -244,7 +229,7 @@ footer { text-align:center; color:var(--muted); margin-top:18px; font-size:13px 
         I value efficient teamwork, dependable execution and continuous learning.
       </p>
     </div>
-    <aside class="skills-board">
+    <aside class="skills-board" data-aos="fade-left">
       <h4 style="color:var(--accent)">Technical & Software Skills</h4>
       <div class="skill-grid" style="margin-top:12px">
         <div class="skill"><div class="icon"><i class="fa-solid fa-computer"></i></div><div class="meta">SAP</div></div>
@@ -257,134 +242,81 @@ footer { text-align:center; color:var(--muted); margin-top:18px; font-size:13px 
   </div>
 </section>
 
-    <div style="margin-top:18px">
-            <div class="small">Also familiar with: administrative workflows, customer support, data entry and seasonal operations.</div>
-          </div>
-        </aside>
+<section class="card" data-aos="fade-up">
+  <h3 style="color:var(--accent)">Education</h3>
+  <div class="timeline" style="margin-top:18px">
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
+      <div class="meta">2013 – 2021</div>
+      <div class="title">Gymnasium Schärding</div>
+      <div class="small">Matura — general secondary education</div>
+    </div>
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="120">
+      <div class="meta">2022 – Jan 2025</div>
+      <div class="title">Apprenticeship: Industrial Clerk — ETERNA Mode GmbH</div>
+      <div class="small">Commercial apprenticeship with industrial focus</div>
+    </div>
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="190">
+      <div class="meta">Jan 2025 – Jun 2025</div>
+      <div class="title">Foreign Language Correspondent (English) — IHK Passau</div>
+      <div class="small">Professional English for business contexts</div>
+    </div>
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="260">
+      <div class="meta">From Oct 2025</div>
+      <div class="title">BSc Environmental & Bioresource Management (planned)</div>
+    </div>
+  </div>
+</section>
+
+<section class="card" data-aos="fade-up">
+  <h3 style="color:var(--accent)">Professional Experience</h3>
+  <div class="experience-grid" style="margin-top:18px">
+    <div class="exp-card" data-aos="fade-up">
+      <div class="meta small">2020 – 2021</div>
+      <div class="title">Assistant — ETERNA Mode GmbH</div>
+    </div>
+    <div class="exp-card" data-aos="fade-up" data-aos-delay="60">
+      <div class="meta small">Aug 2021</div>
+      <div class="title">Intern — denk-outdoor.de</div>
+    </div>
+    <div class="exp-card" data-aos="fade-up" data-aos-delay="120">
+      <div class="meta small">Apr 2022 – Jun 2022</div>
+      <div class="title">Assistant — MVZ Laboratory, Passau</div>
+    </div>
+    <div class="exp-card" data-aos="fade-up" data-aos-delay="180">
+      <div class="meta small">Jan 2025 – Mar 2025</div>
+      <div class="title">Ski Instructor — SSS Asitz, Leogang</div>
+    </div>
+  </div>
+</section>
+
+<section class="card" data-aos="fade-up">
+  <div class="two-col">
+    <div>
+      <h3 style="color:var(--accent)">Languages</h3>
+      <div class="skill-bar"><div class="small">German — Native</div><div class="bar-track"><div class="bar-fill" style="width:98%"></div></div></div>
+      <div class="skill-bar"><div class="small">English — C1</div><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div></div>
+      <div class="skill-bar"><div class="small">Spanish — A2</div><div class="bar-track"><div class="bar-fill" style="width:36%"></div></div></div>
+      <h4 style="color:var(--accent); margin-top:18px">Software & Tools</h4>
+      <div class="tools-grid">
+        <div class="tool-box"><i class="fa-solid fa-desktop" style="color:var(--accent)"></i> SAP</div>
+        <div class="tool-box"><i class="fa-solid fa-file-lines" style="color:var(--accent)"></i> MS Office</div>
+        <div class="tool-box"><i class="fa-brands fa-salesforce" style="color:var(--accent)"></i> Salesforce</div>
+        <div class="tool-box"><i class="fa-solid fa-pen-nib" style="color:var(--accent)"></i> InDesign (basic)</div>
+        <div class="tool-box"><i class="fa-solid fa-image" style="color:var(--accent)"></i> Photoshop (basic)</div>
+        <div class="tool-box"><i class="fa-solid fa-database" style="color:var(--accent)"></i> Data entry & admin</div>
       </div>
-    </section>
+    </div>
+    <aside class="skills-board" data-aos="fade-left">
+      <h4 style="color:var(--accent)">What I bring</h4>
+      <p class="small muted">
+        Practical experience across retail, laboratory and corporate apprenticeship settings, combined with a strong willingness to learn new digital tools.
+        I add value through reliability, quick learning and a hands-on mindset — ideal for student positions that require flexibility and initiative.
+      </p>
+    </aside>
+  </div>
+</section>
 
-    <!-- EDUCATION (timeline) -->
-    <section class="card" data-aos="fade-up">
-      <div style="width:100%">
-        <h3 style="color:var(--accent)">Education</h3>
-        <div class="timeline" style="margin-top:18px">
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
-            <div class="meta">2013 – 2021</div>
-            <div class="title">Gymnasium Schärding</div>
-            <div class="small">Matura — general secondary education</div>
-            <p class="small muted" style="margin-top:8px">Comprehensive secondary education with focus on general academic foundations.</p>
-          </div>
-
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="120">
-            <div class="meta">2022 – Jan 2025</div>
-            <div class="title">Apprenticeship: Industrial Clerk — ETERNA Mode GmbH</div>
-            <div class="small">Commercial apprenticeship with industrial focus</div>
-            <p class="small muted" style="margin-top:8px">
-              Completed vocational training in a corporate environment — responsibilities included administrative support, documentation, coordination with departments and process-oriented tasks.
-            </p>
-          </div>
-
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="190">
-            <div class="meta">Jan 2025 – Jun 2025</div>
-            <div class="title">Foreign Language Correspondent (English) — IHK Passau</div>
-            <div class="small">Professional English for business contexts</div>
-            <p class="small muted" style="margin-top:8px">
-              Intensive course focused on written and spoken business English and correspondence. (Certificate: IHK Passau)
-            </p>
-          </div>
-
-          <div class="timeline-item" data-aos="fade-up" data-aos-delay="260">
-            <div class="meta">From Oct 2025</div>
-            <div class="title">BSc Environmental & Bioresource Management (planned)</div>
-            <div class="small">Study start scheduled — focus on environmental systems and resource management</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section class="card" data-aos="fade-up">
-      <div style="width:100%">
-        <h3 style="color:var(--accent)">Professional Experience</h3>
-        <div class="experience-grid" style="margin-top:18px">
-          <div class="exp-card" data-aos="fade-up">
-            <div class="meta small">2020 – 2021</div>
-            <div class="title">Assistant — ETERNA Mode GmbH</div>
-            <p class="small muted">Worked as a temporary assistant supporting store and operational tasks; gained insight into corporate processes and customer interactions.</p>
-          </div>
-
-          <div class="exp-card" data-aos="fade-up" data-aos-delay="60">
-            <div class="meta small">Aug 2021</div>
-            <div class="title">Intern — denk-outdoor.de</div>
-            <p class="small muted">Hands-on retail internship: customer service, merchandise presentation and daily shop operations.</p>
-          </div>
-
-          <div class="exp-card" data-aos="fade-up" data-aos-delay="120">
-            <div class="meta small">Apr 2022 – Jun 2022</div>
-            <div class="title">Assistant — MVZ Laboratory, Passau</div>
-            <p class="small muted">Administrative support in laboratory operations, including data entry and management of test records.</p>
-          </div>
-
-          <div class="exp-card" data-aos="fade-up" data-aos-delay="180">
-            <div class="meta small">Jan 2025 – Mar 2025</div>
-            <div class="title">Ski Instructor — SSS Asitz, Leogang</div>
-            <p class="small muted">Taught and supervised skiing lessons for children and adults; responsibility for safety and skill progression.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LANGUAGES & TOOLS -->
-    <section class="card" data-aos="fade-up">
-      <div class="two-col">
-        <div>
-          <h3 style="color:var(--accent)">Languages</h3>
-          <div style="margin-top:10px">
-            <div class="skill-bar">
-              <div class="small">German — Native</div>
-              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width:98%"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="small">English — C1</div>
-              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width:88%"></div></div>
-            </div>
-            <div class="skill-bar">
-              <div class="small">Spanish — A2</div>
-              <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width:36%"></div></div>
-            </div>
-          </div>
-    <h4 style="color:var(--accent); margin-top:18px">Software & Tools</h4>
-          <div class="tools-grid">
-            <div class="tool-box"><i class="fa-solid fa-desktop" style="color:var(--accent)"></i> SAP</div>
-            <div class="tool-box"><i class="fa-solid fa-file-lines" style="color:var(--accent)"></i> MS Office</div>
-            <div class="tool-box"><i class="fa-brands fa-salesforce" style="color:var(--accent)"></i> Salesforce</div>
-            <div class="tool-box"><i class="fa-solid fa-pen-nib" style="color:var(--accent)"></i> InDesign (basic)</div>
-            <div class="tool-box"><i class="fa-solid fa-image" style="color:var(--accent)"></i> Photoshop (basic)</div>
-            <div class="tool-box"><i class="fa-solid fa-database" style="color:var(--accent)"></i> Data entry & admin</div>
-          </div>
-        </div>
-
-        <aside class="skills-board" data-aos="fade-left">
-          <h4 style="color:var(--accent); margin-top:0">What I bring</h4>
-          <p class="small muted">
-            Practical experience across retail, laboratory and corporate apprenticeship settings, combined with a strong willingness to learn new digital tools.
-            I add value through reliability, quick learning and a hands-on mindset — ideal for student positions that require flexibility and initiative.
-          </p>
-
-          <div style="margin-top:18px">
-            <div class="small" style="margin-bottom:8px">Relevant for Werkstudent roles:</div>
-            <ul style="color:#dfe9df; padding-left:16px; margin:0">
-              <li class="small">Administrative support & process understanding</li>
-              <li class="small">Customer-facing tasks & communication</li>
-              <li class="small">Basic digital tool proficiency (SAP, Salesforce, MS Office)</li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-<section id="contact" class="card">
+<section id="contact" class="card" data-aos="fade-up">
   <div class="contact">
     <div>
       <h3>Contact</h3>
